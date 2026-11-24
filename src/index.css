@@ -1,0 +1,130 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  --font-mono: "Plus Jakarta Sans", "Pretendard Variable", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+@layer base {
+  :root {
+    --duo-green: #58cc02;
+    --duo-green-dark: #46a302;
+    --duo-green-light: #86efac;
+    --duo-blue: #1cb0f6;
+    --duo-blue-dark: #0f85d9;
+    --duo-yellow: #ffc800;
+    --duo-yellow-dark: #e5b200;
+    --duo-orange: #ff9600;
+    --duo-orange-dark: #e08000;
+    --duo-purple: #ce82ff;
+    --duo-purple-dark: #a559d6;
+    --duo-rose: #ff4b4b;
+    --duo-rose-dark: #ea2b2b;
+    --duo-gray-border: #e5e7eb;
+  }
+
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    word-break: keep-all;
+  }
+
+  body {
+    color: #111827;
+    background-color: #f8fafc;
+    letter-spacing: -0.015em;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4 {
+    letter-spacing: -0.025em;
+    text-wrap: balance;
+  }
+}
+
+/* Duolingo 3D Tactile Buttons */
+.btn-3d {
+  transition: transform 0.08s ease, box-shadow 0.08s ease, background-color 0.15s ease;
+  position: relative;
+  user-select: none;
+}
+
+.btn-3d:active {
+  transform: translateY(3px) !important;
+  box-shadow: 0 0 0 transparent !important;
+}
+
+.shadow-duo-green {
+  box-shadow: 0 4px 0 #46a302;
+}
+
+.shadow-duo-green:hover {
+  box-shadow: 0 4px 0 #3d8f02;
+}
+
+.shadow-duo-blue {
+  box-shadow: 0 4px 0 #0f85d9;
+}
+
+.shadow-duo-yellow {
+  box-shadow: 0 4px 0 #e5b200;
+}
+
+.shadow-duo-orange {
+  box-shadow: 0 4px 0 #e08000;
+}
+
+.shadow-duo-purple {
+  box-shadow: 0 4px 0 #a559d6;
+}
+
+.shadow-duo-rose {
+  box-shadow: 0 4px 0 #ea2b2b;
+}
+
+.shadow-duo-gray {
+  box-shadow: 0 4px 0 #d1d5db;
+}
+
+.shadow-duo-white {
+  box-shadow: 0 4px 0 #e5e7eb;
+}
+
+/* Tactile 3D Card / Node */
+.duo-node-shadow {
+  box-shadow: 0 8px 0 rgba(0, 0, 0, 0.12);
+}
+
+.duo-node-active {
+  box-shadow: 0 6px 0 #46a302;
+}
+
+/* Pulse flame animation */
+@keyframes duo-flame-pulse {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  25% {
+    transform: scale(1.12) rotate(-3deg);
+  }
+  75% {
+    transform: scale(1.08) rotate(3deg);
+  }
+}
+
+.animate-flame {
+  animation: duo-flame-pulse 1.8s infinite ease-in-out;
+  display: inline-block;
+}
+
+@keyframes duo-wiggle {
+  0%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-6deg); }
+  75% { transform: rotate(6deg); }
+}
+
+.animate-wiggle {
+  animation: duo-wiggle 1s ease-in-out infinite;
+}
